@@ -1,0 +1,51 @@
+package com.umarabdul.jspider.plugin;
+
+import java.util.*;
+import com.umarabdul.jspider.*;
+import com.umarabdul.jbrowser.*;
+
+
+/**
+* A template for JSpider plugins.
+*
+* @author
+* @version
+* Date: 
+*/
+
+public class MyPlugin extends Plugin{
+
+  public MyPlugin(JSpider spider){
+  
+    super(spider);
+    setPluginName("MyPlugin"); // Define the plugin name to be used in console outputs.
+  }
+  
+  /**
+  * Return a string array containing the names of options required by this plugin.
+  * @return Array of option names.
+  */
+  @Override
+  public String[] getRequiredOptions(){
+
+    String opts[] = {};
+    return opts;
+  }
+
+  /**
+  * Called in a background thread by JSpider to start the plugin.
+  */
+  @Override
+  public void run(){
+
+    String url = null;
+    while (true){
+      url = getURL();
+      if (url == null){ // Shutdown the plugin.
+        return;
+      }
+      // Do something...
+      
+    }
+  } 
+}

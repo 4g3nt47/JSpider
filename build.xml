@@ -1,0 +1,49 @@
+<project name="jspider" default="build" basedir=".">
+  <target name="init">
+    <property name="src.dir" value="src"/>
+    <property name="out.dir" value="bin"/>
+    <property name="lib.dir" value="lib"/>
+    <path id="lib.classpath">
+      <fileset dir="${lib.dir}"/>
+    </path>
+    <property name="main.class" value="com.umarabdul.jspider.JSpider"/>
+    <property name="jar.file" value="jspider.jar"/>
+    <property name="dep.all.jar" value="${lib.dir}/dependencies-all.jar"/>
+    <property name="release.version" value="11"/>
+  </target>
+  <target name="prepare" depends="init">
+    <mkdir dir="${out.dir}"/>
+    <mkdir dir="${lib.dir}"/>
+  </target>
+  <target name="clean" depends="init">
+    <delete dir="${out.dir}"/>
+    <delete file="${dep.all.jar}"/>
+  </target>
+  <target name="build" depends="prepare">
+    <javac debug="true" debuglevel="lines,vars,source" release="${release.version}" srcdir="${src.dir}" destdir="${out.dir}" classpathref="lib.classpath"/>
+  </target>
+  <target name="bundle-deps" depends="build">
+    <delete file="${dep.all.jar}"/>
+    <jar jarfile="${dep.all.jar}">
+      <zipgroupfileset dir="${lib.dir}" excludes=""/>
+    </jar>
+  </target>
+  <target name="jar" depends="build">
+    <delete file="${jar.file}"/>
+    <jar jarfile="${jar.file}" basedir="${out.dir}">
+      <manifest>
+        <attribute name="Main-Class" value="${main.class}"/>
+      </manifest>
+    </jar>
+  </target>
+  <target name="fat-jar" depends="bundle-deps">
+    <delete file="${jar.file}"/>
+    <jar jarfile="${jar.file}" basedir="${out.dir}">
+      <manifest>
+        <attribute name="Main-Class" value="${main.class}"/>
+      </manifest>
+      <zipfileset src="${dep.all.jar}" excludes="META-INF/*.SF"/>
+    </jar>
+    <delete file="${dep.all.jar}"/>
+  </target>
+</project>
