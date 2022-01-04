@@ -2,7 +2,7 @@
 
 JSpider is an advanced, multi-threaded Java library for crawling websites. It can be used as a command line program with all it's primary features. JSpider's `JSpider.start()` function is non-blocking, which allows the invoking code to access URLs live as they are captured (see the `JSpider.getOutputQueue()` function).
 
-Starting with version 1.1, you can extend the functionalities of JSpider by creating custom plugins. See the [plugins](https://github.com/UmarAbdul01/JSpider/src/com/umarabdul/jspider/plugin/) directory for some samples.
+Starting with version 1.1, you can extend the functionalities of JSpider by creating custom plugins. See the [plugins](https://github.com/UmarAbdul01/JSpider/blob/master/src/com/umarabdul/jspider/plugin/) directory for some samples.
 
 ## Build.
 
