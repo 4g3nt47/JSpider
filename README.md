@@ -14,7 +14,7 @@ directory for some samples.
 
 ## Build.
 
-* $ git clone https://github.com/UmarAbdul01/JSpider.git
-* $ cd JSpider
-* $ ant fat-jar
+* `$ git clone https://github.com/UmarAbdul01/JSpider.git`
+* `$ cd JSpider`
+* `$ ant fat-jar`
 * $ java -jar jspider.jar --help
