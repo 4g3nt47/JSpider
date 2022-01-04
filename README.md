@@ -8,10 +8,6 @@ Starting with version 1.1, you can extend the functionalities of JSpider by
 creating custom plugins. See the [plugins](https://github.com/UmarAbdul01/JSpider/plugin/)
 directory for some samples.
 
-## Dependencies.
-* [JBrowser](https://github.com/UmarAbdul01/JBrowser)
-* [ArgParser](https://github.com/UmarAbdul01/ArgParser)
-
 ## Build.
 
 * `$ git clone https://github.com/UmarAbdul01/JSpider.git`
