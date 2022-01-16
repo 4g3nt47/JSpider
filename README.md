@@ -6,7 +6,7 @@ Starting with version 1.1, you can extend the functionalities of JSpider by crea
 
 ## Build.
 
-* `$ git clone https://github.com/UmarAbdul01/JSpider.git`
+* `$ git clone https://github.com/4g3nt47/JSpider.git`
 * `$ cd JSpider`
 * `$ ant fat-jar`
 * `$ java -jar jspider.jar --help`
